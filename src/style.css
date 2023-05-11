@@ -1,0 +1,244 @@
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	user-select: none;
+	font-family: sans-serif;
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+	background: #568cac;
+	background: #252525;
+}
+
+.App {
+	width: min-content;
+	height: min-content;
+	position: absolute;
+	inset: 0;
+	margin: auto;
+}
+
+.pokemon-card {
+	width: 300px;
+	height: 580px;
+	border-radius: 5px;
+	background: linear-gradient(#fc1e1f, #35cdff);
+	display: grid;
+	justify-content: stretch;
+	grid-template-rows: 80px 1fr 130px 80px;
+	grid-row-gap: 20px;
+	box-shadow: 0 0 20px 0 #ffffff22;
+	position: relative;
+	overflow: hidden;
+}
+
+.wrong-bg {
+	background: red;
+}
+
+.correct-bg {
+	background: #7294b6;
+}
+
+.guess-card--logo, .wrong-card--logo, .correct-card--logo {
+	width: 100%;
+	height: 100%;
+	padding: 20px 0 0 0;
+	object-fit: contain;
+}
+
+.guess-card--img, .wrong-card--img, .correct-card--img {
+	height: 100%;
+	width: 100%;
+	padding: 0 30px;
+	object-fit: contain;
+	overflow: hidden;
+	transition: filter 2s;
+}
+
+.correct-card--img {
+	filter: brightness(0);
+}
+
+.question, .wrong {
+	position: absolute;
+	height: 80px;
+	top: 90px;
+	right: 30px;
+}
+
+.guess-card--inputs, .wrong-card--inputs, .correct-card--inputs {
+	padding: 0px 20px;
+	color: #ffffff;
+	text-align: center;
+	font-weight: 900;
+}
+
+.correct-card--inputs > i {
+	background: #ffffff;
+	color: #303030;
+	border-radius: 50%;
+	padding: 6px;
+	cursor: pointer;
+	margin-left: 20px;
+}
+
+.tryagain, .success {
+	border-radius: 10px;
+	padding: 5px 10px;
+	background: yellow;
+	font-weight: 900;
+	margin-top: 20px;
+	border: 0px;
+	box-shadow: 0 0 20px 0 #55555588;
+	cursor: pointer;	
+	color: #000000;
+}
+
+.success {
+	padding: 5px 30px;
+	cursor: inherit;
+}
+
+.guess-card--name {
+	border-radius: 10px;
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	border: 0px;
+	box-shadow: 0 0 20px 0 #55555588;
+}
+
+.guess-card--name::placeholder {
+	color: #c1c1c1;
+}
+
+.guess-card--buttons {
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: center;
+	grid-template-columns: min-content 1fr;
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.guess-card--buttons > p {
+	width: 100%;
+	text-align: center;
+	padding: 5px 15px;
+	border-radius: 8px;
+	box-shadow: 0 0 20px 0 #55555588;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.skip {
+	background: #2e6eb5;
+}
+
+.guess {
+	background: #ff1c1c;
+}
+
+.guess-card--foot {
+	border-radius: 10px;
+	box-shadow: 0 0 15px 0 #555555cc;
+	text-align: center;
+	padding: 20px;
+	font-size: 1.1rem;
+	position: relative;
+	z-index: 1;
+	background: #1fb8ea;
+}
+
+.pokeball {
+	height: 30px;
+	position: absolute;
+	top: -15px;
+	right: 0;
+	left: 0;
+	margin: auto;
+	z-index: 1;
+}
+
+.img-black {
+	filter: brightness(0);
+}
+
+.ash {
+	position: absolute;
+	width: 28%;
+	max-height: 120px;
+	object-fit: contain;
+	right: 0;
+	left: 0;
+	margin: auto;
+	bottom: -110px;
+	transform: translateY(0px);
+	transition: transform 1s;
+}
+
+.blur {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: lightblue;	
+	opacity: 0.5;
+	filter: blur(10px);
+	z-index: 5;
+}
+
+.loading {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+
+.loading > * {
+	position: absolute;
+	inset: 0;
+	margin: auto;	
+}
+
+.loading-ball {
+	width: 60px;
+}
+
+.loading-out {
+	stroke: #ffffff;
+	stroke-dasharray: 188.50px;
+	stroke-dashoffset: 0px;
+	animation: outAnimation 4s infinite linear;
+}
+
+.loading-in {
+	stroke: #ffffff;
+	stroke-dasharray: 125.66px;
+	stroke-dashoffset: 0px;
+	animation: inAnimation 2s infinite linear;
+}
+
+@keyframes inAnimation {
+	0% {
+		stroke-dashoffset: 0px;
+	}
+	100% {
+		stroke-dashoffset: 251.33px;
+	}
+}
+
+@keyframes outAnimation {
+	0% {
+		stroke-dashoffset: 0px;
+	}
+	100% {
+		stroke-dashoffset: -377px;
+	}
+}
+
